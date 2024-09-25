@@ -37,11 +37,12 @@ function sendMessage() {
 
   // Send the message to the server
   fetch(url, request)
-    .then((response) => {
-      // console.log(response);
+    .then(async (response) => {
+      const data = await response.json();
+      console.log(data);
       appendMessage(
-        response.data.choices[0].message.content, //gets the response of chatbot
-        response.data.choices[0].message.role //gets the role of chatbot
+        data.choices[0].message.content, //gets the response of chatbot
+        data.choices[0].message.role //gets the role of chatbot
       );
     })
     .catch((error) => {
@@ -64,4 +65,6 @@ function appendMessage(text, sender) {
   //Adding div to chatbox
   messageDiv.appendChild(messagePara);
   chatBoxBody.appendChild(messageDiv);
+  // Scroll to bottom in chat box
+  chatBoxBody.scrollTop = chatBoxBody.scrollHeight;
 }

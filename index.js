@@ -31,7 +31,7 @@ app.post("/message", limiter, async (req, res, next) => {
         { role: "system", content: "You are a helpful assistant." },
         { role: "user", content: query },
       ],
-      response_format: { "type": "json_object" }, // response format type
+      // response_format: { "type": "json_object" }, // response format type //issue line
       temperature: 0.5, //randomizer
       frequency_penalty: 1, //penalty for repetition
       max_completion_tokens: 128, //limit of response tokens
@@ -41,6 +41,7 @@ app.post("/message", limiter, async (req, res, next) => {
 
   try {
     const response = await axios(options);
+    console.log(response.data);
     res.json(response.data);
   } catch (err) {
     console.error("Fetch error:", err);

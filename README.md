@@ -1,7 +1,6 @@
 # Current Issues 25-Sept-2024 IST
 
-**Backend** 429 error(Too Many Requests)
-**Frontend** loading func to create
+**1. Frontend** loading func to create and css to adjust
 
 # Aichatbot
 

@@ -1,0 +1,14 @@
+{
+  "name": "AI Chatbot",
+  "version": "1.0",
+  "description": "A simple extension for user to chat with AI.",
+  "permissions": ["storage"],
+  "action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "manifest_version": 3
+}

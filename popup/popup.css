@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* chat container */
+.chat-box {
+  border: 2px solid #0f4c5c;
+  border-radius: 0.2rem;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* chat header */
+.header {
+  background-color: #0f4c5c;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: small;
+}
+
+/* chat body */
+.chat-box-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 1rem;
+  padding: 10px;
+  height: 250px;
+  overflow-y: auto;
+}
+
+/* chat footer */
+.footer {
+  display: flex;
+  padding: 10px;
+  border-top: 2px solid #0f4c5c;
+}
+
+.footer input {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #0f4c5c;
+  border-radius: 0.2rem;
+}
+
+.footer button {
+  margin-left: 0.5rem;
+  padding: 5px 10px;
+  color: white;
+  background-color: #0f4c5c;
+  border: 1px solid #0f4c5c;
+  border-radius: 0.2rem;
+  transition: color 0.2s ease, border 0.2s ease, background-color 0.2s ease;
+}
+
+.footer button:active {
+  color: #0f4c5c;
+  background-color: white;
+}
+
+/* Chats  */
+.response {
+  align-self: flex-start;
+}
+
+.response > p {
+  font-size: smaller;
+  width: fit-content;
+  margin-bottom: 0.5rem;
+  margin-right: 2rem;
+  color: white;
+  background-color: #00b144;
+  border-radius: 1rem 1rem 1rem 0;
+  padding: 0.5rem 1rem;
+}
+
+.message {
+  align-self: flex-end;
+}
+
+.message > p {
+  font-size: smaller;
+  width: fit-content;
+  margin-bottom: 0.5rem;
+  margin-left: 2rem;
+  color: white;
+  background-color: #006db1;
+  border-radius: 1rem 1rem 0 1rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.error {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.error > p {
+  font-size: small;
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  margin: 0.5rem;
+  color: white;
+  background-color: #b13200;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "ai-chat-ext",
+  "version": "1.0.0",
+  "description": "Welcome to **AI Chatbot**, a web extension application that allows users display their message as an alert.",
+  "main": "service-worker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Aman Bisht",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.0"
+  }
+}

@@ -1,7 +1,3 @@
-# Current Issues 25-Sept-2024 IST
-
-**1. Frontend** loading func to create and css to adjust
-
 # Aichatbot
 
 **Aichatbot** is an intelligent conversational assistant. It can answer questions, provide recommendations, and assist with various tasks in real-time.

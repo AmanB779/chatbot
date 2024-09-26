@@ -1,5 +1,5 @@
 //for api server errors
-const errorHandler = (err, req, res, next) => {
+const errorHandler = (err, req, res) => {
   console.error("Server error:", err);
   if (err.response) {
     res.status(err.response.status).send(err.response.data.error.message);

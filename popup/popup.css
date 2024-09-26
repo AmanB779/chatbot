@@ -4,6 +4,7 @@
   --folly: #ff4754ff;
   --polynesian-blue: #00427f;
   --screamin-green: #19a741;
+  --ut-purple: #bb00ff;
 }
 
 body {
@@ -71,7 +72,7 @@ body {
 }
 
 /* Chats  */
-.response .message {
+.response .message .loading {
   margin-bottom: 0.3rem;
 }
 
@@ -108,6 +109,17 @@ body {
   margin: 0.3rem;
   color: white;
   background-color: var(--folly);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.loading > p {
+  font-size: small;
+  width: fit-content;
+  text-align: center;
+  margin: 0.3rem;
+  color: white;
+  background-color: var(--ut-purple);
   border-radius: 1rem;
   padding: 0.5rem 1rem;
 }

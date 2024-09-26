@@ -26,7 +26,12 @@ function sendMessage() {
     inputField.value = "";
   }
 
-  //Setting up request parameters
+  // Show loading message and disable inputs
+  const loadingMessageDiv = appendMessage("Thinking ^_^ ....", "loading");
+  button.disabled = true;
+  inputField.disabled = true;
+
+  // Setting up request parameters
   const request = {
     method: "POST",
     headers: {
@@ -40,19 +45,26 @@ function sendMessage() {
     .then(async (response) => {
       const data = await response.json();
       console.log(data);
+      loadingMessageDiv.remove(); // Remove loading message
       appendMessage(
-        data.choices[0].message.content, //gets the response of chatbot
-        data.choices[0].message.role //gets the role of chatbot
+        data.choices[0].message.content, // gets the response of chatbot
+        data.choices[0].message.role // gets the role of chatbot
       );
     })
     .catch((error) => {
       console.log(error);
+      loadingMessageDiv.remove(); // Remove loading message
       appendMessage("An error was encountered!", "Error");
+    })
+    .finally(() => {
+      // enable button and input field after response
+      button.disabled = false;
+      inputField.disabled = false;
     });
 }
 
 function appendMessage(text, sender) {
-  //Creating a div for each chat and assigning class
+  // Creating a div for each chat and assigning class
   const messageDiv = document.createElement("div");
   const messagePara = document.createElement("p");
   messageDiv.className =
@@ -60,11 +72,16 @@ function appendMessage(text, sender) {
       ? "message"
       : sender === "assistant"
       ? "response"
-      : "error";
+      : sender === "error"
+      ? "error"
+      : "loading"; // For loading state
   messagePara.textContent = text;
-  //Adding div to chatbox
+
+  // Adding div to chatbox
   messageDiv.appendChild(messagePara);
   chatBoxBody.appendChild(messageDiv);
-  // Scroll to bottom in chat box
+
+  // Scroll to bottom in chatbox
   chatBoxBody.scrollTop = chatBoxBody.scrollHeight;
+  return messageDiv; // Return the message div for later removal
 }

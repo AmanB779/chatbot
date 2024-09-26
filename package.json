@@ -2,7 +2,7 @@
   "name": "ai-chat-ext",
   "version": "1.0.0",
   "description": "Welcome to **AI Chatbot**, a web extension application that allows users display their message as an alert.",
-  "main": "service-worker.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
